@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Famous Actors</h1>
+<br>
+<table class="catalog">
+<% @actors.each do |actor| %>
+ <tr>
+ <td>
+ <div class="image">
+ <%= link_to (image_tag actor.image_url, :style => "height:100px"), actor %>
+ </div>
+ </td>
+ <td>
+ <div class="name">
+ <%= link_to actor.name, actor %>
+ </div>
+
+ <div class="age">
+ <%=h actor.age %>
+ </div>
+
+ <div class="famousmovies">
+ <%=h actor.famous_movies %>
+ </div>
+
+ <div class="links">
+ <%= link_to 'Edit', edit_actor_path(actor) %> |
+ <%= link_to 'Destroy', actor, :confirm => 'Are you sure?', :method => :delete %>
+ </div>
+
+ </td>
+ </tr>
+<% end %>
+</table>
+<p><%= link_to 'New actor', new_actor_path %></p>
