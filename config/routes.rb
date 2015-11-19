@@ -1,6 +1,20 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get 'site/trailer'
+
+  get 'site/login'
+
+  get 'site/posters'
+
+  get 'site/login'
+
   get '/movies' => 'movies#index'
   get '/actors' => 'actors#index'
+  get '/login' => 'site#login'
+  get '/trailer' => 'site#trailer'
+
+  root 'movies#index'
+
   resources :actors
   resources :movies
   # The priority is based upon order of creation: first created -> highest priority.

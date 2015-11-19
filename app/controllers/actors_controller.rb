@@ -1,4 +1,5 @@
 class ActorsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_actor, only: [:show, :edit, :update, :destroy]
 
   # GET /actors
