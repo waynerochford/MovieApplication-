@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  get 'page/gallery'
+
   devise_for :users
   get 'site/trailer'
+  get 'page/gallery'
 
   get 'site/login'
 
-  get 'site/posters'
+
 
   get 'site/login'
 
@@ -12,6 +15,7 @@ Rails.application.routes.draw do
   get '/actors' => 'actors#index'
   get '/login' => 'site#login'
   get '/trailer' => 'site#trailer'
+  get '/gallery' => 'page#gallery'
 
   root 'movies#index'
 
